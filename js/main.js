@@ -211,6 +211,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  let lastScrollTop = 0; // Последняя позиция скролла
+  const header = document.getElementById("header__fixed"); // Находим меню
 
+  window.addEventListener("scroll", function () {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+          // Если скроллим вниз — показываем меню
+          header.style.height = "70px"; // Меняем высоту на видимую
+          header.style.overflow = "visible";
+      } else {
+          // Если скроллим вверх — скрываем меню
+          header.style.height = "0";
+          header.style.overflow = "hidden";
+      }
+
+      lastScrollTop = scrollTop;
+  });
+});
 
 
