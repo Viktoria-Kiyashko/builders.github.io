@@ -29,3 +29,54 @@ function changeSlide(direction) {
 slider__container.style.backgroundImage = slider__backgrounds[slider__currentSlide];
 document.getElementById('current__slide').textContent = slider__currentSlide + 1;
 document.getElementById('total__slides').textContent = slider__totalSlides;
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function moveSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = document.querySelectorAll(".slide");
+    let dots = document.querySelectorAll(".dot");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+}
+
+let teamSlideIndex = 1;
+showTeamSlides(teamSlideIndex);
+
+function moveTeamSlide(n) {
+    showTeamSlides(teamSlideIndex += n);
+}
+
+function currentTeamSlide(n) {
+    showTeamSlides(teamSlideIndex = n);
+}
+
+function showTeamSlides(n) {
+    let slides = document.querySelectorAll(".team-slide");
+    let dots = document.querySelectorAll(".team-dot");
+
+    if (n > slides.length) { teamSlideIndex = 1 }
+    if (n < 1) { teamSlideIndex = slides.length }
+
+    slides.forEach(slide => slide.style.display = "none");
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[teamSlideIndex - 1].style.display = "block";
+    dots[teamSlideIndex - 1].classList.add("active");
+}
