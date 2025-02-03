@@ -520,6 +520,7 @@ html {
     gap: 20px;
     position: relative;
     z-index: 3;
+    background-color: rgb(247, 247, 247);
 }
 
 .port__left__section {
@@ -701,6 +702,123 @@ html {
 .dot.active {
     background-color: rgba(201, 201, 201, 0.552);
 }
+
+.team-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .team__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .team__left__section {
+    width: 40%;
+  }
+  
+  .team__text h1 {
+    font-size: 35px;
+    font-family: var(--main-font);
+  }
+  
+  .team__text p {
+    color: rgb(66, 66, 66);
+    font-size: 20px;
+    font-family: var(--main-font);
+  }
+  
+  .team__right__section {
+    width: 55%;
+  }
+  
+  .team-slider__area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .team-slide {
+    min-width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .team-slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .team-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .team-role {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .team-prev, .team-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .team-prev {
+    left: 10px;
+  }
+  
+  .team-next {
+    right: 10px;
+  }
+  
+  .team-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .team-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(205, 205, 205, 0.767);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .team-dot:hover,
+  .team-dot.active {
+    background-color: rgba(201, 201, 201, 0.552);
+  }
 
 .selected {
     width: 100%;
@@ -1633,6 +1751,8 @@ html {
     align-items: center;
     overflow: hidden;
 }
+
+
 
 .slider__container {
     position: relative;
